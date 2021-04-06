@@ -1,0 +1,101 @@
+h1{
+    text-align: left;
+    color: orange;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+.icon img{
+    float: left;
+    width: 50px;
+    height: 50px;
+    
+}
+.icon h1 {
+    position: relative;
+    top: 8px;
+    left: 10px;
+  }
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.reg_Form{
+    margin-top: 25px;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: white;
+    text-align: center;
+    border:solid orange 1px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.content{
+    padding: 10px 5px;
+}
+p{
+    font-size: 85%;
+}
+.form_Heading{
+    color: orange;
+}
+.inputs{
+    width: 97%;
+    margin: 2px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: left;
+    }
+    #name{
+width: 94%;
+padding: 12px 20px;
+margin: 10px 0;
+border-radius: 5px;
+border: 1px solid rgb(184, 180, 180);
+    }
+    #email{
+        width: 94%;
+        padding: 12px 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid rgb(184, 180, 180);
+    }
+    #number{
+        width: 94%;
+        padding: 12px 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid rgb(184, 180, 180);
+    }
+ 
+#date{
+    width: 42%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid rgb(184, 180, 180);
+}
+ 
+#time{
+    width: 42%;
+    size: 20%;
+    padding: 12px 20px;
+    margin: 8px;
+    margin-right: 0;
+    margin-left: 12px;
+    border-radius: 5px;
+}
+#submit{
+    padding: 12px 15px;
+    font-size: 20px;
+   margin-top: 10px;
+    width: 100%;
+    color:whitesmoke;
+    background-color: orange;
+    border:none;
+    border-radius: 5px;
+    
+}
