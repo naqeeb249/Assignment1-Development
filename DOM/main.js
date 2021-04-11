@@ -26,6 +26,13 @@ const userList = document.querySelector('#users');
 
 myForm.addEventListener('submit', onSubmit);
 
+myForm.addEventListener('DOMContentLoaded',(e) => {
+    console.log(localStorage.getItem('name'));
+document.querySelector('#name').innerHTML = localStorage.getItem('name');
+
+
+})
+
 function onSubmit(e){
     e.preventDefault();
     
@@ -36,6 +43,7 @@ function onSubmit(e){
         setTimeout(()  => msg.remove(), 3000)
     }
     else{
+        localStorage.setItem('name',nameInput.value);
         const li = document.createElement('li');
         li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
         userList.appendChild(li);
