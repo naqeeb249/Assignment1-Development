@@ -26,12 +26,15 @@ const userList = document.querySelector('#users');
 
 myForm.addEventListener('submit', onSubmit);
 
-myForm.addEventListener('DOMContentLoaded',(e) => {
-    console.log(localStorage.getItem('name'));
-document.querySelector('#name').innerHTML = localStorage.getItem('name');
+myForm.addEventListener("DOMContentLoaded", () => {
+    console.log("vscode");
+    localStorage.getItem();
+  });
 
-
-})
+  var keys = Object.keys(localStorage), //taking out all the keys that are there in the local storage
+  i = keys.length; //6
+console.log("keys", keys);
+let stringifiedDetailsOfPeople, detailsOfPeople;
 
 function onSubmit(e){
     e.preventDefault();
@@ -43,7 +46,7 @@ function onSubmit(e){
         setTimeout(()  => msg.remove(), 3000)
     }
     else{
-        localStorage.setItem('name',nameInput.value);
+        localStorage.setItem("userDetails" + emailInput, JSON.stringify(object));
         const li = document.createElement('li');
         li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
         userList.appendChild(li);
