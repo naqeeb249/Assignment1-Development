@@ -96,5 +96,8 @@ function onSubmit(e){
 
 
 
+const getUsers = axios
+.get('https://crudcrud.com/api/d8ce09a91dbb48ff810f441b9214bf56/users').then(data => console.log(data));
+
 
 
