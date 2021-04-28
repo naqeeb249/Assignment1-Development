@@ -30,6 +30,29 @@ myForm.addEventListener("DOMContentLoaded", () => {
     console.log("vscode");
     localStorage.getItem();
   });
+  if (document.readyState !== "loading") {
+    console.log("vscode");
+  
+    var keys = Object.keys(localStorage), //taking out all the keys that are there in the local storage
+      i = keys.length; //6
+    console.log("keys", keys);
+    let stringifiedDetailsOfPeople, detailsOfPeople;
+  
+    // 6 to 0
+    while (i--) {
+      //i==2
+      if (keys[i].match(/userDetails/g)) {
+        //we only care about keys that start with userDetails
+        //this is called regex matching
+        stringifiedDetailsOfPeople = localStorage.getItem(keys[i]);
+        console.log("stringifiedDetailsOfPeople", stringifiedDetailsOfPeople);
+        detailsOfPeople = JSON.parse(stringifiedDetailsOfPeople);
+        console.log("details", detailsOfPeople);
+  
+        addNewLineElement(detailsOfPeople);
+      }
+    }
+  }
 
   var keys = Object.keys(localStorage), //taking out all the keys that are there in the local storage
   i = keys.length; //6
@@ -46,13 +69,28 @@ function onSubmit(e){
         setTimeout(()  => msg.remove(), 3000)
     }
     else{
-        localStorage.setItem("userDetails" + emailInput, JSON.stringify(object));
+        const emailId = document.getElementById("email").value;
+        const name = document.getElementById("name").value;
+        if (emailInput.value.length > 0 && nameInput.value.length > 0) {
+          const object = {
+            name: name,
+            emailId: emailId //unique
+          };
+          localStorage.setItem("userDetails" + emailId, JSON.stringify(object));
+          axios
+          .post('https://crudcrud.com/api/d8ce09a91dbb48ff810f441b9214bf56/users',{object})
+          .then(addNewLineElement(object));
+         // addNewLineElement(object);
+        }
+
+        function addNewLineElement(object){
         const li = document.createElement('li');
         li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
         userList.appendChild(li);
-
+     
         nameInput.value = '';
         emailInput.value = '';
+        }
     }
 }
 
